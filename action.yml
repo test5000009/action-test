@@ -1,0 +1,20 @@
+name: Go Multianalyzer Check
+description: Run a set of golang.org/x/tools/go/analysis.Analyzers on a repository.
+author: The Sia Foundation
+inputs:
+  failOnError:
+    description: Whether to fail if analyzer finds errors.
+    required: false
+    default: true
+  analyzers:
+    description: List of analyzers.
+    required: true
+  directories:
+    description: List of directories to pass to the analyzers.  If multiple directories are to be passed simultaneously, place them on the same line and separate them with a space.
+    required: true
+runs:
+  using: "node16"
+  main: "dist/index.js"
+branding:
+  icon: check
+  color: green
